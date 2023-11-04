@@ -117,7 +117,13 @@
 			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
 			"Data": {
 	"Brush": {
-		"$type": "FlaxEngine.GUI.SolidColorBrush, FlaxEngine.CSharp"
+		"$type": "FlaxEngine.GUI.SolidColorBrush, FlaxEngine.CSharp",
+		"Color": {
+			"R": 1.0,
+			"G": 1.0,
+			"B": 1.0,
+			"A": 1.0
+		}
 	}
 }
 		},
@@ -126,7 +132,15 @@
 			"PrefabID": "983348ba4ec2e1f7d131e1871074e89d",
 			"PrefabObjectID": "ae43d06c4238d5f024cb2ab7f5185e0a",
 			"ParentID": "94ddc70f480a9cb9c576859ae6abc0bf",
-			"V": {}
+			"V": {
+	"UIEle": "94ddc70f480a9cb9c576859ae6abc0bf"
+}
+		},
+		{
+			"ID": "b01ee2a3439ddc3a8a56db9d727d4f5f",
+			"TypeName": "FlaxEngine.AudioSource",
+			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
+			"Name": "AudioSource"
 		}
 	]
 }
