@@ -140,7 +140,15 @@
 			"ID": "b01ee2a3439ddc3a8a56db9d727d4f5f",
 			"TypeName": "FlaxEngine.AudioSource",
 			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
-			"Name": "AudioSource"
+			"Name": "AudioSource",
+			"Clip": "a4f068e44f9fe5c906bb8b92663c4e2d",
+			"PlayOnStart": true
+		},
+		{
+			"ID": "5aeab0c849e9e9512e10a2a2b15d4d7a",
+			"TypeName": "FlaxEngine.AudioListener",
+			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
+			"Name": "AudioListener"
 		}
 	]
 }
