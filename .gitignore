@@ -9,6 +9,8 @@ Screenshots/
 # Ignore Visual Studio project files (generated locally)
 *.csproj
 *.sln
+*.vscode
+CardBasedRPS.code-workspace
 
 # Ignore thumbnails created by Windows
 Thumbs.db
