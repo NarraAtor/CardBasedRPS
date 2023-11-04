@@ -25,6 +25,7 @@ namespace Game
         /// <inheritdoc/>
         public override void OnStart()
         {
+            // Is this the only way of doing this? There should be a way for me to pass in/refer to this image directly
             image = (Image) UIEle.Control;
             Debug.Log(image);
             // Here you can add code that needs to be called when script is created, just before the first game update
@@ -54,14 +55,14 @@ namespace Game
             switch (cardType)
             {
                 case CardType.Rock:
-                    image.Color = Color.Green;
+                    image.Color = Color.Red;
 
                     break;
                 case CardType.Paper:
                     image.Color = Color.Green;
                     break;
                 case CardType.Scissors:
-                    image.Color = Color.Green;
+                    image.Color = Color.Blue;
 
                     break;
             }
