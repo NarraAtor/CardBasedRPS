@@ -26,7 +26,6 @@ namespace Game
         {
             image = Actor.GetScript<Image>();
             // Here you can add code that needs to be called when script is created, just before the first game update
-            SetCardColor();
         }
         
         /// <inheritdoc/>
@@ -45,7 +44,7 @@ namespace Game
         public override void OnUpdate()
         {
             // Here you can add code that needs to be called every frame
-
+            SetCardColor();
         }
 
         private void SetCardColor()
