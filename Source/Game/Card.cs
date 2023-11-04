@@ -18,13 +18,15 @@ namespace Game
     public class Card : Script
     {
         private CardType cardType;
+        public UIControl UIEle;
         private Image image;
         public CardType CardType { get { return cardType; } set { cardType = value; } }
 
         /// <inheritdoc/>
         public override void OnStart()
         {
-            image = Actor.GetScript<Image>();
+            image = (Image) UIEle.Control;
+            Debug.Log(image);
             // Here you can add code that needs to be called when script is created, just before the first game update
         }
         
