@@ -11,11 +11,13 @@ namespace Game
     {
 
         public AudioSource Source;
+        private bool importantSpeechPlaying;
 
         /// <inheritdoc/>
         public override void OnStart()
         {
             // Here you can add code that needs to be called when script is created, just before the first game update
+            importantSpeechPlaying = false;
         }
         
         /// <inheritdoc/>
@@ -34,11 +36,23 @@ namespace Game
         public override void OnUpdate()
         {
             // Here you can add code that needs to be called every frame
+            if(Source.State != AudioSource.States.Playing) { importantSpeechPlaying = false; }
         }
 
         public void PlaySound(AudioClip soundClip)
         {
-            Source.Stop();
+            if (!importantSpeechPlaying)
+            {
+                Source.Stop();
+                Source.Clip = soundClip;
+                Source.Play();
+            }
+            
+        }
+
+        public void PlaySoundContinuously(AudioClip soundClip)
+        {
+            importantSpeechPlaying = true;
             Source.Clip = soundClip;
             Source.Play();
         }
