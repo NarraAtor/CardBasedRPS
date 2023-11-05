@@ -96,6 +96,12 @@
 			}
 		},
 		{
+			"ID": "4dabda8f45637fae23836c986f47875b",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
+			"Name": "AudioManager"
+		},
+		{
 			"ID": "2e7d899f43865ab5465b468e81a30d48",
 			"TypeName": "FlaxEngine.UICanvas",
 			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
@@ -117,13 +123,7 @@
 			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
 			"Data": {
 	"Brush": {
-		"$type": "FlaxEngine.GUI.SolidColorBrush, FlaxEngine.CSharp",
-		"Color": {
-			"R": 1.0,
-			"G": 1.0,
-			"B": 1.0,
-			"A": 1.0
-		}
+		"$type": "FlaxEngine.GUI.SolidColorBrush, FlaxEngine.CSharp"
 	}
 }
 		},
@@ -137,18 +137,10 @@
 }
 		},
 		{
-			"ID": "b01ee2a3439ddc3a8a56db9d727d4f5f",
-			"TypeName": "FlaxEngine.AudioSource",
+			"ID": "b50ff0014350d3059a601ea3eb743202",
+			"TypeName": "FlaxEngine.EmptyActor",
 			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
-			"Name": "AudioSource",
-			"Clip": "a4f068e44f9fe5c906bb8b92663c4e2d",
-			"PlayOnStart": true
-		},
-		{
-			"ID": "5aeab0c849e9e9512e10a2a2b15d4d7a",
-			"TypeName": "FlaxEngine.AudioListener",
-			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
-			"Name": "AudioListener"
+			"Name": "GameManager"
 		}
 	]
 }

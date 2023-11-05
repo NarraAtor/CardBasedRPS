@@ -9,6 +9,7 @@ namespace Game
     /// </summary>
     public class GameManager : Script
     {
+
         /// <inheritdoc/>
         public override void OnStart()
         {
