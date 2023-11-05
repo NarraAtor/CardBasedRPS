@@ -29,9 +29,9 @@ namespace Game
         {
             // Here you can add code that needs to be called when script is created, just before the first game update
 
-            // Is this the only way of doing this? There should be a way for me to pass in/refer to this image directly
-            _image = (Image) UIEle.Control;
-            _button = (Button) Actor.GetChild<UIControl>().Control;
+            _image = UIEle.Get<Image>();
+            _button = Actor.GetChild<UIControl>().Get<Button>();
+            _button.HoverBegin += OnHoverBegin;
         }
         
         /// <inheritdoc/>
@@ -53,6 +53,11 @@ namespace Game
             SetCardColor();
         }
 
+        public void OnHoverBegin()
+        {
+            Debug.Log("Hovered over card");
+        }
+
         private void SetCardColor()
         {
             switch (_cardType)
@@ -70,5 +75,6 @@ namespace Game
                     break;
             }
         }
+
     }
 }
