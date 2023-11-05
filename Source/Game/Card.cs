@@ -26,6 +26,7 @@ namespace Game
 
         private CardType _cardType;
         private Button _button;
+        private TextureBrush _textureBrush;
         private AudioManager _audioManager;
 
 
@@ -37,6 +38,8 @@ namespace Game
             // Is this the only way of doing this? There should be a way for me to pass in/refer to this image directly
             _button = UIEle.Get<Button>();
             _button.HoverBegin += OnHoverBegin;
+
+            _textureBrush = (TextureBrush) _button.BackgroundBrush;
         }
 
         /// <inheritdoc/>
@@ -55,7 +58,7 @@ namespace Game
         public override void OnUpdate()
         {
             // Here you can add code that needs to be called every frame
-            //SetCardColor();
+            SetCardTexture();
         }
 
         private void OnHoverBegin()
@@ -64,19 +67,19 @@ namespace Game
 
         }
 
-        private void SetCardColor()
+        private void SetCardTexture()
         {
             switch (_cardType)
             {
                 case CardType.Rock:
-                    //_image.Color = Color.Red;
+                    _textureBrush.Texture = rockTexture;
 
                     break;
                 case CardType.Paper:
-                    //_image.Color = Color.Green;
+                    _textureBrush.Texture = paperTexture;
                     break;
                 case CardType.Scissors:
-                    //_image.Color = Color.Blue;
+                    _textureBrush.Texture = scissorsTexture;
 
                   break;
             }
