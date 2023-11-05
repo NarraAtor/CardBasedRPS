@@ -19,6 +19,9 @@ namespace Game
         private List<Card> _playerHand;
         private List<Card> _aiHand;
 
+        private int _playerScore = 0;
+        private int _aiScore = 0;
+
         private readonly int NUM_OF_EACH_CARD_IN_DECK = 4;
         private readonly int HAND_SIZE = 3;
 
