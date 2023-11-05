@@ -101,7 +101,11 @@
 		"TypeName": "Game.Card",
 		"ParentID": "3bbbdfbf4817ce6b985cddb5e11b71dd",
 		"V": {
-	"UIEle": "3bbbdfbf4817ce6b985cddb5e11b71dd"
+	"UIEle": "3bbbdfbf4817ce6b985cddb5e11b71dd",
+	"rockTexture": "ac8c617a47ef14ba7eeab6b3fd4eef29",
+	"paperTexture": "274046e142d68c21a0e64196d00def25",
+	"scissorsTexture": "0073edf145e5e9b6fc6571804cf5beb4",
+	"cardbackTexture": "8369553847df43e0adce9789df43ddff"
 }
 	}
 ]
