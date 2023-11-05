@@ -11,6 +11,7 @@ namespace Game
     {
 
         public AudioSource Source;
+        private List<AudioClip> multiClips;
         private bool importantSpeechPlaying;
 
         /// <inheritdoc/>
@@ -18,6 +19,7 @@ namespace Game
         {
             // Here you can add code that needs to be called when script is created, just before the first game update
             importantSpeechPlaying = false;
+            multiClips = new List<AudioClip>();
         }
         
         /// <inheritdoc/>
@@ -36,7 +38,16 @@ namespace Game
         public override void OnUpdate()
         {
             // Here you can add code that needs to be called every frame
-            if(Source.State != AudioSource.States.Playing) { importantSpeechPlaying = false; }
+
+            if (Source.State != AudioSource.States.Playing && multiClips.Count > 0)
+            {
+                Source.Clip = multiClips[0];
+                Source.Play();
+                multiClips.RemoveAt(0);
+            }
+
+            if (Source.State != AudioSource.States.Playing && multiClips.Count == 0) { importantSpeechPlaying = false; }
+
         }
 
         public void PlaySound(AudioClip soundClip)
@@ -50,11 +61,10 @@ namespace Game
             
         }
 
-        public void PlaySoundContinuously(AudioClip soundClip)
+        public void PlaySoundContinuously(List<AudioClip> soundClips)
         {
             importantSpeechPlaying = true;
-            Source.Clip = soundClip;
-            Source.Play();
+            multiClips = soundClips;
         }
     }
 }

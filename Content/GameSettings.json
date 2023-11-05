@@ -1,13 +1,13 @@
 {
 	"ID": "9eba3d2a4cee4c099117f49c5dffc171",
 	"TypeName": "FlaxEditor.Content.Settings.GameSettings",
-	"EngineBuild": 6401,
+	"EngineBuild": 6344,
 	"Data": {
-	"ProductName": "My Game",
-	"CompanyName": "My Company",
+	"ProductName": "Kakegurui RPS Card w/ Screen Reader",
+	"CompanyName": "Ryan Webb and Eric Fotang Incorportaed",
 	"CopyrightNotice": null,
 	"Icon": null,
-	"FirstScene": "74a68a984824b4510d12589f199ad68f",
+	"FirstScene": "6fc4df194e87fe7e7bcea3ad4dee7e15",
 	"NoSplashScreen": false,
 	"SplashScreen": null,
 	"Time": "9acd18b0496064d35799f390d3a2b374",
