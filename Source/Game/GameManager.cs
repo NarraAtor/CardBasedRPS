@@ -213,7 +213,7 @@ namespace Game
         {
             if (playerCard.CardType == otherCard.CardType)
                 return RoundResult.Draw;
-            if (playerCard.CardType == otherCard.CardType + 1 % 2)
+            if (playerCard.CardType == otherCard.CardType + 1 % 3)
                 return RoundResult.PlayerWin;
             else
                 return RoundResult.PlayerLose;
