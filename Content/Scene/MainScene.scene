@@ -155,6 +155,12 @@
 			"TypeName": "FlaxEngine.EmptyActor",
 			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
 			"Name": "Game Manager"
+		},
+		{
+			"ID": "cea319dc4903316b04de39a782f28c0f",
+			"TypeName": "Game.GameManager",
+			"ParentID": "287f56f043efe869929089900d9c4fca",
+			"V": {}
 		}
 	]
 }

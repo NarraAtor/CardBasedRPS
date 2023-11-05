@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FlaxEngine;
+using FlaxEngine.GUI;
 
 namespace Game
 {
@@ -9,11 +10,20 @@ namespace Game
     /// </summary>
     public class GameManager : Script
     {
+        public Prefab cardPrefab;
+
+        private List<Card> _deck;
+        private List<Card> _playerHand;
+        private List<Card> _aiHand;
 
         /// <inheritdoc/>
         public override void OnStart()
         {
-            // Here you can add code that needs to be called when script is created, just before the first game update
+            _deck = new List<Card>();
+            _playerHand = new List<Card>();
+            _aiHand = new List<Card>();
+
+            PrefabManager.SpawnPrefab(cardPrefab);
         }
         
         /// <inheritdoc/>
