@@ -5,6 +5,13 @@ using FlaxEngine.GUI;
 
 namespace Game
 {
+    enum RoundResult
+    {
+        PlayerWin,
+        PlayerLose,
+        Tie
+    }
+
     /// <summary>
     /// GameManager Script.
     /// </summary>
@@ -21,6 +28,7 @@ namespace Game
 
         private int _playerScore = 0;
         private int _aiScore = 0;
+        private bool _gameOver = false;
 
         private readonly int NUM_OF_EACH_CARD_IN_DECK = 4;
         private readonly int HAND_SIZE = 3;
@@ -124,21 +132,47 @@ namespace Game
         {
             // get the card the ai is gonna play
             Card aiCard = _aiHand[(int) (RandomUtil.Rand() * _aiHand.Count)];
-            Debug.Log(aiCard.CardType);
+            Debug.Log($"Enemy: {aiCard.CardType}\nPlayer: {cardToPlay.CardType}");
 
             // rock paper scissors logic
             switch (GetRPSWinner(cardToPlay, aiCard))
             {
                 case RoundResult.PlayerWin:
                     Debug.Log("Player won");
+                    _playerScore++;
                     break;
                 case RoundResult.PlayerLose:
                     Debug.Log("Player lost");
+                    _aiScore++;
                     break;
                 case RoundResult.Tie:
                     Debug.Log("Round tie");
                     break;
             }
+
+            // remove from hands
+            _playerHand.Remove(cardToPlay);
+            _aiHand.Remove(aiCard);
+            cardToPlay.Actor.IsActive = false;
+            aiCard.Actor.IsActive = false;
+            // draw to hands from the deck
+            DrawCards();
+        }
+
+        private void DrawCards()
+        {
+            Debug.Log("Drawing Cards...");
+            Card drawnPlayerCard = _deck[_deck.Count-1];
+            Debug.Log(drawnPlayerCard);
+            _deck.Remove(drawnPlayerCard);
+            _playerHand.Add(drawnPlayerCard);
+            drawnPlayerCard.Actor.SetParent(playerHandActor, false);
+            drawnPlayerCard.UIEle.Get<Button>().Enabled = true;
+
+            Card drawnAiCard = _deck[_deck.Count-1];
+            _deck.Remove(drawnAiCard);
+            _aiHand.Add(drawnAiCard);
+            drawnAiCard.Actor.SetParent(aiHandActor, false);
         }
 
         /// <summary>
@@ -157,11 +191,6 @@ namespace Game
                 return RoundResult.PlayerLose;
         }
 
-        private enum RoundResult
-        {
-            PlayerWin,
-            PlayerLose,
-            Tie
-        }
+        
     }
 }
