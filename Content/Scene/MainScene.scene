@@ -117,13 +117,7 @@
 			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
 			"Data": {
 	"Brush": {
-		"$type": "FlaxEngine.GUI.SolidColorBrush, FlaxEngine.CSharp",
-		"Color": {
-			"R": 1.0,
-			"G": 1.0,
-			"B": 1.0,
-			"A": 1.0
-		}
+		"$type": "FlaxEngine.GUI.SolidColorBrush, FlaxEngine.CSharp"
 	}
 }
 		},
@@ -160,7 +154,9 @@
 			"ID": "cea319dc4903316b04de39a782f28c0f",
 			"TypeName": "Game.GameManager",
 			"ParentID": "287f56f043efe869929089900d9c4fca",
-			"V": {}
+			"V": {
+	"cardPrefab": "983348ba4ec2e1f7d131e1871074e89d"
+}
 		}
 	]
 }
