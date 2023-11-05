@@ -22,14 +22,16 @@ namespace Game
         
         private CardType _cardType;
         private Image _image;
+        private Button _button;
 
         /// <inheritdoc/>
         public override void OnStart()
         {
+            // Here you can add code that needs to be called when script is created, just before the first game update
+
             // Is this the only way of doing this? There should be a way for me to pass in/refer to this image directly
             _image = (Image) UIEle.Control;
-            Debug.Log(_image);
-            // Here you can add code that needs to be called when script is created, just before the first game update
+            _button = (Button) Actor.GetChild<UIControl>().Control;
         }
         
         /// <inheritdoc/>
