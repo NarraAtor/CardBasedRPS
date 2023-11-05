@@ -90,6 +90,7 @@ namespace Game
             {
                 Card newCard = PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>();
                 newCard.AudioManager = Actor.FindActor("Audio Manager").GetScript<AudioManager>();
+                newCard.GameManager = this;
                 newCard.CardType = CardType.Rock;
                 newCard.UIEle.Get<Button>().Enabled = false;
                 _deck.Add(newCard);
@@ -99,6 +100,7 @@ namespace Game
             {
                 Card newCard = PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>();
                 newCard.AudioManager = Actor.FindActor("Audio Manager").GetScript<AudioManager>();
+                newCard.GameManager = this;
                 newCard.CardType = CardType.Paper;
                 newCard.UIEle.Get<Button>().Enabled = false;
                 _deck.Add(newCard);
@@ -108,6 +110,7 @@ namespace Game
             {
                 Card newCard = PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>();
                 newCard.AudioManager = Actor.FindActor("Audio Manager").GetScript<AudioManager>();
+                newCard.GameManager = this;
                 newCard.CardType = CardType.Scissors;
                 newCard.UIEle.Get<Button>().Enabled = false;
                 _deck.Add(newCard);
