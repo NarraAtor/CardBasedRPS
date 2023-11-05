@@ -160,7 +160,15 @@
 			"ID": "cea319dc4903316b04de39a782f28c0f",
 			"TypeName": "Game.GameManager",
 			"ParentID": "287f56f043efe869929089900d9c4fca",
-			"V": {}
+			"V": {
+	"cardPrefab": "983348ba4ec2e1f7d131e1871074e89d"
+}
+		},
+		{
+			"ID": "07fb50764ad486479c1949aae41a5bd0",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
+			"Name": "Deck"
 		}
 	]
 }

@@ -20,10 +20,11 @@ namespace Game
         public override void OnStart()
         {
             _deck = new List<Card>();
+            Card card = new Card();
             _playerHand = new List<Card>();
             _aiHand = new List<Card>();
 
-            PrefabManager.SpawnPrefab(cardPrefab);
+            GenerateDeck();
         }
         
         /// <inheritdoc/>
@@ -42,6 +43,19 @@ namespace Game
         public override void OnUpdate()
         {
             // Here you can add code that needs to be called every frame
+        }
+
+        public void GenerateDeck()
+        {
+            _deck.Clear();
+            _playerHand.Clear();
+            _aiHand.Clear();
+
+            // create three cards of each type (rock, paper, scissors) and shuffle them into the deck
+            for (int i = 0; i < 3; i++)
+            {
+                _deck.Add(PrefabManager.SpawnPrefab(cardPrefab).GetScript<Card>());
+            }
         }
     }
 }
