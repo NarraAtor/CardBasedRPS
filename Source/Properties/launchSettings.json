@@ -2,9 +2,9 @@
   "profiles": {
     "Game": {
       "commandName": "Executable",
-      "workingDirectory": "C:\\Users\\rfhwe\\Documents\\GitHub\\CardBasedRPS",
+      "workingDirectory": "C:\\Users\\NarraAtor\\Documents\\Flax Projects\\CardBasedRPS",
       "executablePath": "C:\\Program Files (x86)\\Flax\\Flax_1.6\\Binaries\\Editor\\Win64\\Development\\FlaxEditor.exe",
-      "commandLineArgs": "-project \"C:\\Users\\rfhwe\\Documents\\GitHub\\CardBasedRPS\"",
+      "commandLineArgs": "-project \"C:\\Users\\NarraAtor\\Documents\\Flax Projects\\CardBasedRPS\"",
       "nativeDebugging": false
     }
   }

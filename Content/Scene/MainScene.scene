@@ -137,6 +137,183 @@
 }
 		},
 		{
+			"ID": "3bc711d946262622ba2a209f00351ec0",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
+			"Name": "Deck",
+			"Control": "FlaxEngine.GUI.HorizontalPanel",
+			"Data": {
+	"Spacing": 2.0,
+	"Offset": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AutoSize": true,
+	"Margin": {
+		"Left": 2.0,
+		"Right": 2.0,
+		"Top": 2.0,
+		"Bottom": 2.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 0.0,
+		"Right": 4.0,
+		"Top": 0.0,
+		"Bottom": 64.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "f815e8334ec09de73a9c6492db4d3166",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
+			"Name": "PlayerHand",
+			"Control": "FlaxEngine.GUI.HorizontalPanel",
+			"Data": {
+	"Spacing": 2.0,
+	"Offset": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AutoSize": true,
+	"Margin": {
+		"Left": 2.0,
+		"Right": 2.0,
+		"Top": 2.0,
+		"Bottom": 2.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 0.0,
+		"Right": 4.0,
+		"Top": 0.0,
+		"Bottom": 64.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "7dcd5eae49045abb53f79cb7b310d4fa",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
+			"Name": "AIHand",
+			"Control": "FlaxEngine.GUI.HorizontalPanel",
+			"Data": {
+	"Spacing": 2.0,
+	"Offset": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AutoSize": true,
+	"Margin": {
+		"Left": 2.0,
+		"Right": 2.0,
+		"Top": 2.0,
+		"Bottom": 2.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 0.0,
+		"Right": 4.0,
+		"Top": 0.0,
+		"Bottom": 64.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
 			"ID": "b01ee2a3439ddc3a8a56db9d727d4f5f",
 			"TypeName": "FlaxEngine.AudioSource",
 			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
@@ -162,28 +339,10 @@
 			"ParentID": "287f56f043efe869929089900d9c4fca",
 			"V": {
 	"cardPrefab": "983348ba4ec2e1f7d131e1871074e89d",
-	"deckActor": "07fb50764ad486479c1949aae41a5bd0",
-	"playerHandActor": "4c3217d244ce22c3987985a07b0b669d",
-	"aiHandActor": "a7216f6a4aac5dbd1324f194bc43c2b9"
+	"deckActor": "3bc711d946262622ba2a209f00351ec0",
+	"playerHandActor": "f815e8334ec09de73a9c6492db4d3166",
+	"aiHandActor": "7dcd5eae49045abb53f79cb7b310d4fa"
 }
-		},
-		{
-			"ID": "07fb50764ad486479c1949aae41a5bd0",
-			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
-			"Name": "Deck"
-		},
-		{
-			"ID": "4c3217d244ce22c3987985a07b0b669d",
-			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
-			"Name": "PlayerHand"
-		},
-		{
-			"ID": "a7216f6a4aac5dbd1324f194bc43c2b9",
-			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
-			"Name": "AIHand"
 		}
 	]
 }
