@@ -344,10 +344,12 @@
 			"Name": "Audio Manager"
 		},
 		{
-			"ID": "612a25ce4c9841650724b495c8af9c5d",
+			"ID": "3fd818f54e02ab637ad97e8b65504f96",
 			"TypeName": "Game.AudioManager",
 			"ParentID": "282d62fa4a74d5353c2fb88874faad53",
-			"V": {}
+			"V": {
+	"Source": "b01ee2a3439ddc3a8a56db9d727d4f5f"
+}
 		}
 	]
 }

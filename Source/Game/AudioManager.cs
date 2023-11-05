@@ -9,9 +9,13 @@ namespace Game
     /// </summary>
     public class AudioManager : Script
     {
+
+        public AudioSource Source;
+
         /// <inheritdoc/>
         public override void OnStart()
         {
+            //Source.Play();
             // Here you can add code that needs to be called when script is created, just before the first game update
         }
         
@@ -31,6 +35,19 @@ namespace Game
         public override void OnUpdate()
         {
             // Here you can add code that needs to be called every frame
+        }
+
+        public void PlaySound(CardType cardType)
+        {
+            switch (cardType)
+            {
+                case CardType.Rock:
+                    break;
+                case CardType.Paper:
+                    break;
+                case CardType.Scissors:
+                    break;
+            }
         }
     }
 }

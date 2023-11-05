@@ -26,6 +26,8 @@ namespace Game
 
         private CardType _cardType;
         private Button _button;
+        private AudioManager _audioManager;
+
 
         /// <inheritdoc/>
         public override void OnStart()
@@ -58,7 +60,8 @@ namespace Game
 
         private void OnHoverBegin()
         {
-            Debug.Log($"Hovered over card: ");
+            // Debug.Log($"Hovered over card: ");
+
         }
 
         private void SetCardColor()
