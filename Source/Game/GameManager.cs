@@ -96,6 +96,7 @@ namespace Game
             for (int i = 0; i < NUM_OF_EACH_CARD_IN_DECK; i++)
             {
                 Card newCard = PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>();
+                newCard.AudioManager = Actor.FindActor("Audio Manager").GetScript<AudioManager>();
                 newCard.CardType = CardType.Rock;
                 _deck.Add(newCard);
             }
@@ -103,6 +104,7 @@ namespace Game
             for (int i = 0; i < NUM_OF_EACH_CARD_IN_DECK; i++)
             {
                 Card newCard = PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>();
+                newCard.AudioManager = Actor.FindActor("Audio Manager").GetScript<AudioManager>();
                 newCard.CardType = CardType.Paper;
                 _deck.Add(newCard);
             }
@@ -110,6 +112,7 @@ namespace Game
             for (int i = 0; i < NUM_OF_EACH_CARD_IN_DECK; i++)
             {
                 Card newCard = PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>();
+                newCard.AudioManager = Actor.FindActor("Audio Manager").GetScript<AudioManager>();
                 newCard.CardType = CardType.Scissors;
                 _deck.Add(newCard);
             }

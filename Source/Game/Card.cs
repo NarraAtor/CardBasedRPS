@@ -19,6 +19,7 @@ namespace Game
     {
         public UIControl UIEle;
         public CardType CardType { get { return _cardType; } set { _cardType = value; } }
+        public AudioManager AudioManager { get { return _audioManager; } set { _audioManager = value; } }
         public Texture rockTexture;
         public Texture paperTexture;
         public Texture scissorsTexture;
