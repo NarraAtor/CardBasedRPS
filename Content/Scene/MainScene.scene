@@ -144,7 +144,7 @@
 			"Transform": {
 				"Translation": {
 					"X": 0.0,
-					"Y": 170.0,
+					"Y": 154.0,
 					"Z": 0.0
 				}
 			},
@@ -175,8 +175,8 @@
 	"Offsets": {
 		"Left": 0.0,
 		"Right": 4.0,
-		"Top": 170.0,
-		"Bottom": 64.0
+		"Top": 154.0,
+		"Bottom": 96.0
 	},
 	"Scale": {
 		"X": 1.0,
@@ -273,13 +273,6 @@
 			"TypeName": "FlaxEngine.UIControl",
 			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
 			"Name": "AIHand",
-			"Transform": {
-				"Translation": {
-					"X": 0.0,
-					"Y": -16.0,
-					"Z": 0.0
-				}
-			},
 			"Control": "FlaxEngine.GUI.HorizontalPanel",
 			"Data": {
 	"Spacing": 2.0,
@@ -307,7 +300,7 @@
 	"Offsets": {
 		"Left": 0.0,
 		"Right": 4.0,
-		"Top": -16.0,
+		"Top": 0.0,
 		"Bottom": 96.0
 	},
 	"Scale": {
