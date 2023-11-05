@@ -31,7 +31,7 @@ namespace Game
 
             _image = UIEle.Get<Image>();
             _button = Actor.GetChild<UIControl>().Get<Button>();
-            _button.HoverBegin += OnHoverBegin;
+            _button.ButtonClicked += OnButtonClicked;
         }
         
         /// <inheritdoc/>
@@ -53,9 +53,9 @@ namespace Game
             SetCardColor();
         }
 
-        public void OnHoverBegin()
+        private void OnButtonClicked(Button button)
         {
-            Debug.Log("Hovered over card");
+            Debug.Log($"Hovered over card: {button}");
         }
 
         private void SetCardColor()
