@@ -34,9 +34,9 @@ namespace Game
 
             // Is this the only way of doing this? There should be a way for me to pass in/refer to this image directly
             _button = UIEle.Get<Button>();
-            _button.ButtonClicked += OnButtonClicked;
+            _button.HoverBegin += OnHoverBegin;
         }
-        
+
         /// <inheritdoc/>
         public override void OnEnable()
         {
@@ -56,9 +56,9 @@ namespace Game
             //SetCardColor();
         }
 
-        private void OnButtonClicked(Button button)
+        private void OnHoverBegin()
         {
-            Debug.Log($"Hovered over card: {button}");
+            Debug.Log($"Hovered over card: ");
         }
 
         private void SetCardColor()
