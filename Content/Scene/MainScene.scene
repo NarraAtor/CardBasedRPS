@@ -117,13 +117,7 @@
 			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
 			"Data": {
 	"Brush": {
-		"$type": "FlaxEngine.GUI.SolidColorBrush, FlaxEngine.CSharp",
-		"Color": {
-			"R": 1.0,
-			"G": 1.0,
-			"B": 1.0,
-			"A": 1.0
-		}
+		"$type": "FlaxEngine.GUI.SolidColorBrush, FlaxEngine.CSharp"
 	}
 }
 		},
