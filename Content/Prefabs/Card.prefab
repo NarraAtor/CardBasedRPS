@@ -44,7 +44,7 @@
 	},
 	"KeepAspectRatio": true,
 	"ClipChildren": true,
-	"CullChildren": true,
+	"CullChildren": false,
 	"AnchorMin": {
 		"X": 0.0,
 		"Y": 0.0
