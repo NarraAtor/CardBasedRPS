@@ -138,11 +138,11 @@ namespace Game
             switch (GetRPSWinner(cardToPlay, aiCard))
             {
                 case RoundResult.PlayerWin:
-                    Debug.Log("Player won");
+                    Debug.Log("Player won the round");
                     _playerScore++;
                     break;
                 case RoundResult.PlayerLose:
-                    Debug.Log("Player lost");
+                    Debug.Log("Player lost the round");
                     _aiScore++;
                     break;
                 case RoundResult.Tie:
@@ -156,7 +156,14 @@ namespace Game
             cardToPlay.Actor.IsActive = false;
             aiCard.Actor.IsActive = false;
             // draw to hands from the deck
-            DrawCards();
+            if (_playerHand.Count == 0)
+            {
+                GameOver();
+            }
+            if (_deck.Count > 0) 
+            {
+                DrawCards();
+            }
         }
 
         private void DrawCards()
@@ -191,6 +198,23 @@ namespace Game
                 return RoundResult.PlayerLose;
         }
 
-        
+        private void GameOver()
+        {
+            _gameOver = true;
+            Debug.Log("Last round played. Ending game.");
+
+            if (_playerScore > _aiScore)
+            {
+                Debug.Log("You won!");
+            }
+            else if (_playerScore < _aiScore)
+            {
+                Debug.Log("You lost!");
+            }
+            else
+            {
+                Debug.Log("The game was a draw.");
+            }
+        }
     }
 }

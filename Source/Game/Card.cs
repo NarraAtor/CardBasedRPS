@@ -76,15 +76,12 @@ namespace Game
             switch (_cardType)
             {
                 case CardType.Rock:
-                    Debug.Log("playing rock hover sound");
                     _audioManager.PlaySound(rockHoverClip);
                     break;
                 case CardType.Paper:
-                    Debug.Log("Playing paper hover sound");
                     _audioManager.PlaySound(paperHoverClip);
                     break;
                 case CardType.Scissors:
-                    Debug.Log("Playing scissors hover sound");
                     _audioManager.PlaySound(scissorHoverClip);
                     break;
             }
