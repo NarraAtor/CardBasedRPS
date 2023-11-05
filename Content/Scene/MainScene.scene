@@ -155,7 +155,8 @@
 			"TypeName": "Game.GameManager",
 			"ParentID": "287f56f043efe869929089900d9c4fca",
 			"V": {
-	"cardPrefab": "983348ba4ec2e1f7d131e1871074e89d"
+	"cardPrefab": "983348ba4ec2e1f7d131e1871074e89d",
+	"deckActor": "07fb50764ad486479c1949aae41a5bd0"
 }
 		},
 		{

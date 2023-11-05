@@ -87,7 +87,9 @@
 		"ID": "ae43d06c4238d5f024cb2ab7f5185e0a",
 		"TypeName": "Game.Card",
 		"ParentID": "3bbbdfbf4817ce6b985cddb5e11b71dd",
-		"V": {}
+		"V": {
+	"UIEle": "3bbbdfbf4817ce6b985cddb5e11b71dd"
+}
 	}
 ]
 }
