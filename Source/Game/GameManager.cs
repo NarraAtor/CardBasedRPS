@@ -12,10 +12,14 @@ namespace Game
     {
         public Prefab cardPrefab;
         public Actor deckActor;
+        public Actor playerHandActor;
+        public Actor aiHandActor;
 
         private List<Card> _deck;
         private List<Card> _playerHand;
         private List<Card> _aiHand;
+
+        private readonly int NUM_OF_EACH_CARD_IN_DECK = 3;
 
         /// <inheritdoc/>
         public override void OnStart()
@@ -46,17 +50,44 @@ namespace Game
             // Here you can add code that needs to be called every frame
         }
 
-        public void GenerateDeck()
+        private void InitGame()
+        {
+            GenerateDeck();
+
+            // draw the player and AI hands
+
+        }
+
+        private void GenerateDeck()
         {
             _deck.Clear();
             _playerHand.Clear();
             _aiHand.Clear();
 
             // create three cards of each type (rock, paper, scissors) and shuffle them into the deck
-            for (int i = 0; i < 3; i++)
+            // Rock cards
+            for (int i = 0; i < NUM_OF_EACH_CARD_IN_DECK; i++)
             {
-                _deck.Add(PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>());
+                Card newCard = PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>();
+                newCard.CardType = CardType.Rock;
+                _deck.Add(newCard);
             }
+            // Paper cards
+            for (int i = 0; i < NUM_OF_EACH_CARD_IN_DECK; i++)
+            {
+                Card newCard = PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>();
+                newCard.CardType = CardType.Paper;
+                _deck.Add(newCard);
+            }
+            // Scissor cards
+            for (int i = 0; i < NUM_OF_EACH_CARD_IN_DECK; i++)
+            {
+                Card newCard = PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>();
+                newCard.CardType = CardType.Scissors;
+                _deck.Add(newCard);
+            }
+
+            // shuffle deck later
         }
     }
 }

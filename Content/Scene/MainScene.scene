@@ -90,8 +90,14 @@
 			"Transform": {
 				"Translation": {
 					"X": 0.0,
-					"Y": 150.0,
-					"Z": -300.0
+					"Y": 190.0,
+					"Z": 12.103897094726563
+				},
+				"Orientation": {
+					"X": 0.7071067094802856,
+					"Y": 0.0,
+					"Z": 0.0,
+					"W": 0.70710688829422
 				}
 			}
 		},
@@ -156,7 +162,9 @@
 			"ParentID": "287f56f043efe869929089900d9c4fca",
 			"V": {
 	"cardPrefab": "983348ba4ec2e1f7d131e1871074e89d",
-	"deckActor": "07fb50764ad486479c1949aae41a5bd0"
+	"deckActor": "07fb50764ad486479c1949aae41a5bd0",
+	"playerHandActor": "4c3217d244ce22c3987985a07b0b669d",
+	"aiHandActor": "a7216f6a4aac5dbd1324f194bc43c2b9"
 }
 		},
 		{
@@ -164,6 +172,18 @@
 			"TypeName": "FlaxEngine.EmptyActor",
 			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
 			"Name": "Deck"
+		},
+		{
+			"ID": "4c3217d244ce22c3987985a07b0b669d",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
+			"Name": "PlayerHand"
+		},
+		{
+			"ID": "a7216f6a4aac5dbd1324f194bc43c2b9",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
+			"Name": "AIHand"
 		}
 	]
 }
