@@ -31,6 +31,7 @@ namespace Game
 
             _image = UIEle.Get<Image>();
             _button = Actor.GetChild<UIControl>().Get<Button>();
+            // Debug.Log(_button);
             _button.ButtonClicked += OnButtonClicked;
         }
         
