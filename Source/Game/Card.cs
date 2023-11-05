@@ -94,6 +94,11 @@ namespace Game
 
         private void SetCardTexture()
         {
+            if (!_button.Enabled)
+            {
+                _textureBrush.Texture = cardbackTexture;
+                return;
+            }
             switch (_cardType)
             {
                 case CardType.Rock:

@@ -9,7 +9,7 @@ namespace Game
     {
         PlayerWin,
         PlayerLose,
-        Tie
+        Draw
     }
 
     /// <summary>
@@ -21,6 +21,23 @@ namespace Game
         public Actor deckActor;
         public Actor playerHandActor;
         public Actor aiHandActor;
+        public AudioManager audioManager;
+
+        public AudioClip playerPlayedRockClip;
+        public AudioClip playerPlayedPaperClip;
+        public AudioClip playerPlayedScissorsClip;
+        
+        public AudioClip aiPlayedRockClip;
+        public AudioClip aiPlayedPaperClip;
+        public AudioClip aiPlayedScissorsClip;
+
+        public AudioClip playerWonRoundClip;
+        public AudioClip playerLostRoundClip;
+        public AudioClip roundDrawClip;
+
+        public AudioClip playerWonGameClip;
+        public AudioClip playerLostGameClip;
+        public AudioClip gameDrawClip;
 
         private List<Card> _deck;
         private List<Card> _playerHand;
@@ -128,42 +145,46 @@ namespace Game
             Utilities.Shuffle(_deck);
         }
 
-        public void TakePlayerTurn(Card cardToPlay)
+        public void TakePlayerTurn(Card playerCardToPlay)
         {
+            List<AudioClip> clips = new List<AudioClip>();
             // get the card the ai is gonna play
             Card aiCard = _aiHand[(int) (RandomUtil.Rand() * _aiHand.Count)];
-            Debug.Log($"Enemy: {aiCard.CardType}\nPlayer: {cardToPlay.CardType}");
+            clips.AddRange(GetPlayedCardsAudioClips(playerCardToPlay, aiCard));            
 
             // rock paper scissors logic
-            switch (GetRPSWinner(cardToPlay, aiCard))
+            switch (GetRoundResult(playerCardToPlay, aiCard))
             {
                 case RoundResult.PlayerWin:
-                    Debug.Log("Player won the round");
+                    clips.Add(playerWonRoundClip);
                     _playerScore++;
                     break;
                 case RoundResult.PlayerLose:
-                    Debug.Log("Player lost the round");
+                    clips.Add(playerLostRoundClip);
                     _aiScore++;
                     break;
-                case RoundResult.Tie:
-                    Debug.Log("Round tie");
+                case RoundResult.Draw:
+                    clips.Add(roundDrawClip);
                     break;
             }
 
             // remove from hands
-            _playerHand.Remove(cardToPlay);
+            _playerHand.Remove(playerCardToPlay);
             _aiHand.Remove(aiCard);
-            cardToPlay.Actor.IsActive = false;
+            playerCardToPlay.Actor.IsActive = false;
             aiCard.Actor.IsActive = false;
             // draw to hands from the deck
             if (_playerHand.Count == 0)
             {
                 GameOver();
+                clips.Add(GetEndGameAudioClip());
             }
             if (_deck.Count > 0) 
             {
                 DrawCards();
             }
+
+            audioManager.PlaySoundContinuously(clips);
         }
 
         private void DrawCards()
@@ -188,10 +209,10 @@ namespace Game
         /// <param name="playerCard"></param>
         /// <param name="otherCard"></param>
         /// <returns>The result of the round</returns>
-        private RoundResult GetRPSWinner(Card playerCard,  Card otherCard)
+        private RoundResult GetRoundResult(Card playerCard,  Card otherCard)
         {
             if (playerCard.CardType == otherCard.CardType)
-                return RoundResult.Tie;
+                return RoundResult.Draw;
             if (playerCard.CardType == otherCard.CardType + 1 % 2)
                 return RoundResult.PlayerWin;
             else
@@ -203,17 +224,54 @@ namespace Game
             _gameOver = true;
             Debug.Log("Last round played. Ending game.");
 
+            
+        }
+
+        private List<AudioClip> GetPlayedCardsAudioClips(Card playerCard, Card aiCard)
+        {
+            List<AudioClip> clips = new List<AudioClip>();
+            switch (playerCard.CardType)
+            {
+                case CardType.Rock:
+                    clips.Add(playerPlayedRockClip);
+                    break;
+                case CardType.Paper:
+                    clips.Add(playerPlayedPaperClip);
+                    break;
+                case CardType.Scissors:
+                    clips.Add(playerPlayedScissorsClip);
+                    break;
+            }
+
+            switch (aiCard.CardType)
+            {
+                case CardType.Rock:
+                    clips.Add(aiPlayedRockClip);
+                    break;
+                case CardType.Paper:
+                    clips.Add(aiPlayedPaperClip);
+                    break;
+                case CardType.Scissors:
+                    clips.Add(aiPlayedScissorsClip);
+                    break;
+            }
+
+            return clips;
+        }
+
+        private AudioClip GetEndGameAudioClip()
+        {
             if (_playerScore > _aiScore)
             {
-                Debug.Log("You won!");
+                return playerWonGameClip;
             }
             else if (_playerScore < _aiScore)
             {
-                Debug.Log("You lost!");
+                return playerLostGameClip;
             }
             else
             {
-                Debug.Log("The game was a draw.");
+                return gameDrawClip;
             }
         }
     }

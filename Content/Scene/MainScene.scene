@@ -115,7 +115,20 @@
 	"cardPrefab": "983348ba4ec2e1f7d131e1871074e89d",
 	"deckActor": "3bc711d946262622ba2a209f00351ec0",
 	"playerHandActor": "f815e8334ec09de73a9c6492db4d3166",
-	"aiHandActor": "7dcd5eae49045abb53f79cb7b310d4fa"
+	"aiHandActor": "7dcd5eae49045abb53f79cb7b310d4fa",
+	"audioManager": "3fd818f54e02ab637ad97e8b65504f96",
+	"playerPlayedRockClip": "0646370e48a9413ec62aa38ee83888ff",
+	"playerPlayedPaperClip": "a446c5cf423bb9cbf17a9cb7e3574acc",
+	"playerPlayedScissorsClip": "16f5e45542a746b281c0e9b3219e2b19",
+	"aiPlayedRockClip": "b14f849c4abd6d04440fa391e233a546",
+	"aiPlayedPaperClip": "fe66eb7244e59feafa58a59f529b63ad",
+	"aiPlayedScissorsClip": "d37a2f734c2ce6c31915c29c7195a581",
+	"playerWonRoundClip": "85fea3e749afaefb0c91ac98e1ac2a1f",
+	"playerLostRoundClip": "0ba8635b46f947167545d287a82b3c21",
+	"roundDrawClip": "cad450b14f9c82f1157f399fb0591dc2",
+	"playerWonGameClip": "898085c148c2c7cffac3748cbbadd743",
+	"playerLostGameClip": "8e6cbca44d99edbb1b8324b0e02278c2",
+	"gameDrawClip": "10517a994567de76ce5b1f910412a5c2"
 }
 		},
 		{
@@ -343,7 +356,7 @@
 			"TypeName": "FlaxEngine.AudioSource",
 			"ParentID": "282d62fa4a74d5353c2fb88874faad53",
 			"Name": "AudioSource",
-			"Clip": "fe66eb7244e59feafa58a59f529b63ad"
+			"Clip": "a4f068e44f9fe5c906bb8b92663c4e2d"
 		},
 		{
 			"ID": "5aeab0c849e9e9512e10a2a2b15d4d7a",
