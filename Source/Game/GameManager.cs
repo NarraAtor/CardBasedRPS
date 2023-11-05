@@ -59,29 +59,22 @@ namespace Game
             GenerateDeck();
 
             // draw the player hand from the deck
-            int playerHandX = 100;
-            int playerHandY = 600;
             for (int i = 0; i < HAND_SIZE; i++)
             {
                 Card card = _deck[i];
                 _deck.Remove(card);
                 _playerHand.Add(card);
                 card.Actor.SetParent(playerHandActor, false);
-                //card.Actor.Transform = new Transform(new Vector3(playerHandX, playerHandY, 0));
-                playerHandX += 64;
+                card.UIEle.Get<Button>().Enabled = true;
             }
 
             // draw the ai hand from the deck
-            int aiHandX = 100;
-            int aiHandY = 0;
             for (int i = 0; i < HAND_SIZE; i++)
             {
                 Card card = _deck[i];
                 _deck.Remove(card);
                 _aiHand.Add(card);
                 card.Actor.SetParent(aiHandActor, false);
-                //card.Actor.Transform = new Transform(new Vector3(aiHandX, aiHandY, 0));
-                playerHandX += 64;
             }
         }
 
@@ -98,6 +91,7 @@ namespace Game
                 Card newCard = PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>();
                 newCard.AudioManager = Actor.FindActor("Audio Manager").GetScript<AudioManager>();
                 newCard.CardType = CardType.Rock;
+                newCard.UIEle.Get<Button>().Enabled = false;
                 _deck.Add(newCard);
             }
             // Paper cards
@@ -106,6 +100,7 @@ namespace Game
                 Card newCard = PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>();
                 newCard.AudioManager = Actor.FindActor("Audio Manager").GetScript<AudioManager>();
                 newCard.CardType = CardType.Paper;
+                newCard.UIEle.Get<Button>().Enabled = false;
                 _deck.Add(newCard);
             }
             // Scissor cards
@@ -114,11 +109,56 @@ namespace Game
                 Card newCard = PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>();
                 newCard.AudioManager = Actor.FindActor("Audio Manager").GetScript<AudioManager>();
                 newCard.CardType = CardType.Scissors;
+                newCard.UIEle.Get<Button>().Enabled = false;
                 _deck.Add(newCard);
             }
 
             // shuffle the deck
             Utilities.Shuffle(_deck);
+        }
+
+        public void TakePlayerTurn(Card cardToPlay)
+        {
+            // get the card the ai is gonna play
+            Card aiCard = _aiHand[(int) (RandomUtil.Rand() * _aiHand.Count)];
+            Debug.Log(aiCard.CardType);
+
+            // rock paper scissors logic
+            switch (GetRPSWinner(cardToPlay, aiCard))
+            {
+                case RoundResult.PlayerWin:
+                    Debug.Log("Player won");
+                    break;
+                case RoundResult.PlayerLose:
+                    Debug.Log("Player lost");
+                    break;
+                case RoundResult.Tie:
+                    Debug.Log("Round tie");
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Returns the results of a round.
+        /// </summary>
+        /// <param name="playerCard"></param>
+        /// <param name="otherCard"></param>
+        /// <returns>The result of the round</returns>
+        private RoundResult GetRPSWinner(Card playerCard,  Card otherCard)
+        {
+            if (playerCard.CardType == otherCard.CardType)
+                return RoundResult.Tie;
+            if (playerCard.CardType == otherCard.CardType + 1 % 2)
+                return RoundResult.PlayerWin;
+            else
+                return RoundResult.PlayerLose;
+        }
+
+        private enum RoundResult
+        {
+            PlayerWin,
+            PlayerLose,
+            Tie
         }
     }
 }
