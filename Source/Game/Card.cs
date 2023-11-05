@@ -25,6 +25,10 @@ namespace Game
         public Texture scissorsTexture;
         public Texture cardbackTexture;
 
+        public AudioClip rockHoverClip;
+        public AudioClip paperHoverClip;
+        public AudioClip scissorHoverClip;
+
         private CardType _cardType;
         private Button _button;
         private TextureBrush _textureBrush;
@@ -39,6 +43,7 @@ namespace Game
             // Is this the only way of doing this? There should be a way for me to pass in/refer to this image directly
             _button = UIEle.Get<Button>();
             _button.HoverBegin += OnHoverBegin;
+            _button.ButtonClicked += OnButtonClick;
 
             _textureBrush = (TextureBrush) _button.BackgroundBrush;
         }
@@ -64,8 +69,26 @@ namespace Game
 
         private void OnHoverBegin()
         {
-            // Debug.Log($"Hovered over card: ");
+            switch (_cardType)
+            {
+                case CardType.Rock:
+                    Debug.Log("Playing rock hover sound");
+                    //_audioManager.PlaySound(rockHoverClip);
+                    break;
+                case CardType.Paper:
+                    Debug.Log("Playing paper hover sound");
+                    //_audioManager.PlaySound(paperHoverClip);
+                    break;
+                case CardType.Scissors:
+                    Debug.Log("Playing scissors hover sound");
+                    //_audioManager.PlaySound(scissorHoverClip);
+                    break;
+            }
+        }
 
+        private void OnButtonClick(Button button)
+        {
+            Debug.Log("Button clicked!");
         }
 
         private void SetCardTexture()

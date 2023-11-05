@@ -105,7 +105,10 @@
 	"rockTexture": "ac8c617a47ef14ba7eeab6b3fd4eef29",
 	"paperTexture": "274046e142d68c21a0e64196d00def25",
 	"scissorsTexture": "0073edf145e5e9b6fc6571804cf5beb4",
-	"cardbackTexture": "8369553847df43e0adce9789df43ddff"
+	"cardbackTexture": "8369553847df43e0adce9789df43ddff",
+	"rockHoverClip": "926c6c8c4ec77e8c884ab7aed033ed64",
+	"paperHoverClip": "56c495ca46d6a3284942689b32c43402",
+	"scissorHoverClip": "58b02fca4fe4066b232d8f97caf8c035"
 }
 	}
 ]
