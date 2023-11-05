@@ -15,7 +15,6 @@ namespace Game
         /// <inheritdoc/>
         public override void OnStart()
         {
-            //Source.Play();
             // Here you can add code that needs to be called when script is created, just before the first game update
         }
         
@@ -37,17 +36,11 @@ namespace Game
             // Here you can add code that needs to be called every frame
         }
 
-        public void PlaySound(CardType cardType)
+        public void PlaySound(AudioClip soundClip)
         {
-            switch (cardType)
-            {
-                case CardType.Rock:
-                    break;
-                case CardType.Paper:
-                    break;
-                case CardType.Scissors:
-                    break;
-            }
+            Source.Stop();
+            Source.Clip = soundClip;
+            Source.Play();
         }
     }
 }
