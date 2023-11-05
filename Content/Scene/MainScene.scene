@@ -149,6 +149,12 @@
 			"TypeName": "FlaxEngine.AudioListener",
 			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
 			"Name": "AudioListener"
+		},
+		{
+			"ID": "287f56f043efe869929089900d9c4fca",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "6fc4df194e87fe7e7bcea3ad4dee7e15",
+			"Name": "Game Manager"
 		}
 	]
 }
