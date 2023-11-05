@@ -141,6 +141,13 @@
 			"TypeName": "FlaxEngine.UIControl",
 			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
 			"Name": "Deck",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 170.0,
+					"Z": 0.0
+				}
+			},
 			"Control": "FlaxEngine.GUI.HorizontalPanel",
 			"Data": {
 	"Spacing": 2.0,
@@ -168,7 +175,7 @@
 	"Offsets": {
 		"Left": 0.0,
 		"Right": 4.0,
-		"Top": 0.0,
+		"Top": 170.0,
 		"Bottom": 64.0
 	},
 	"Scale": {
@@ -200,6 +207,13 @@
 			"TypeName": "FlaxEngine.UIControl",
 			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
 			"Name": "PlayerHand",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 373.0,
+					"Z": 0.0
+				}
+			},
 			"Control": "FlaxEngine.GUI.HorizontalPanel",
 			"Data": {
 	"Spacing": 2.0,
@@ -227,7 +241,7 @@
 	"Offsets": {
 		"Left": 0.0,
 		"Right": 4.0,
-		"Top": 0.0,
+		"Top": 373.0,
 		"Bottom": 64.0
 	},
 	"Scale": {
