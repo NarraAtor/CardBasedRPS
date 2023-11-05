@@ -117,26 +117,6 @@
 			"V": {}
 		},
 		{
-			"ID": "94ddc70f480a9cb9c576859ae6abc0bf",
-			"PrefabID": "983348ba4ec2e1f7d131e1871074e89d",
-			"PrefabObjectID": "3bbbdfbf4817ce6b985cddb5e11b71dd",
-			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
-			"Data": {
-	"BackgroundBrush": {
-		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp"
-	}
-}
-		},
-		{
-			"ID": "eb7c75d340ceb791d776b78eb2069255",
-			"PrefabID": "983348ba4ec2e1f7d131e1871074e89d",
-			"PrefabObjectID": "ae43d06c4238d5f024cb2ab7f5185e0a",
-			"ParentID": "94ddc70f480a9cb9c576859ae6abc0bf",
-			"V": {
-	"UIEle": "94ddc70f480a9cb9c576859ae6abc0bf"
-}
-		},
-		{
 			"ID": "3bc711d946262622ba2a209f00351ec0",
 			"TypeName": "FlaxEngine.UIControl",
 			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
@@ -325,107 +305,6 @@
 	"Enabled": true,
 	"Visible": true,
 	"AutoFocus": false
-}
-		},
-		{
-			"ID": "42a9d31d454e3c03abe188ade9d632be",
-			"TypeName": "FlaxEngine.UIControl",
-			"ParentID": "2e7d899f43865ab5465b468e81a30d48",
-			"Name": "Button",
-			"Transform": {
-				"Translation": {
-					"X": 380.0,
-					"Y": 110.0,
-					"Z": 0.0
-				}
-			},
-			"Control": "FlaxEngine.GUI.Button",
-			"Data": {
-	"TextColor": {
-		"R": 1.0,
-		"G": 1.0,
-		"B": 1.0,
-		"A": 1.0
-	},
-	"Text": "",
-	"Font": {
-		"Font": "4508d98f4aa1f0bd59362b81d47e38f4",
-		"Size": 9.0
-	},
-	"TextMaterial": null,
-	"BackgroundBrush": {
-		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
-		"Texture": "274046e142d68c21a0e64196d00def25",
-		"Filter": 1
-	},
-	"BackgroundColorHighlighted": {
-		"R": 0.0,
-		"G": 0.0,
-		"B": 0.0,
-		"A": 1.0
-	},
-	"BackgroundColorSelected": {
-		"R": 0.0,
-		"G": 0.47843137,
-		"B": 0.8,
-		"A": 1.0
-	},
-	"BorderColor": {
-		"R": 0.32941177,
-		"G": 0.32941177,
-		"B": 0.36078432,
-		"A": 1.0
-	},
-	"BorderColorHighlighted": {
-		"R": 0.41568628,
-		"G": 0.41568628,
-		"B": 0.45882353,
-		"A": 1.0
-	},
-	"BorderColorSelected": {
-		"R": 0.10980392,
-		"G": 0.5921569,
-		"B": 0.91764706,
-		"A": 1.0
-	},
-	"ClipChildren": true,
-	"CullChildren": true,
-	"AnchorMin": {
-		"X": 0.0,
-		"Y": 0.0
-	},
-	"AnchorMax": {
-		"X": 0.0,
-		"Y": 0.0
-	},
-	"Offsets": {
-		"Left": 380.0,
-		"Right": 64.0,
-		"Top": 110.0,
-		"Bottom": 96.0
-	},
-	"Scale": {
-		"X": 1.0,
-		"Y": 1.0
-	},
-	"Pivot": {
-		"X": 0.5,
-		"Y": 0.5
-	},
-	"Shear": {
-		"X": 0.0,
-		"Y": 0.0
-	},
-	"Rotation": 0.0,
-	"BackgroundColor": {
-		"R": 1.0,
-		"G": 1.0,
-		"B": 1.0,
-		"A": 1.0
-	},
-	"Enabled": true,
-	"Visible": true,
-	"AutoFocus": true
 }
 		},
 		{
