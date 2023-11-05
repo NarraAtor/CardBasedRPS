@@ -17,17 +17,18 @@ namespace Game
     /// </summary>
     public class Card : Script
     {
-        private CardType cardType;
         public UIControl UIEle;
-        private Image image;
-        public CardType CardType { get { return cardType; } set { cardType = value; } }
+        public CardType CardType { get { return _cardType; } set { _cardType = value; } }
+        
+        private CardType _cardType;
+        private Image _image;
 
         /// <inheritdoc/>
         public override void OnStart()
         {
             // Is this the only way of doing this? There should be a way for me to pass in/refer to this image directly
-            image = (Image) UIEle.Control;
-            Debug.Log(image);
+            _image = (Image) UIEle.Control;
+            Debug.Log(_image);
             // Here you can add code that needs to be called when script is created, just before the first game update
         }
         
@@ -52,17 +53,17 @@ namespace Game
 
         private void SetCardColor()
         {
-            switch (cardType)
+            switch (_cardType)
             {
                 case CardType.Rock:
-                    image.Color = Color.Red;
+                    _image.Color = Color.Red;
 
                     break;
                 case CardType.Paper:
-                    image.Color = Color.Green;
+                    _image.Color = Color.Green;
                     break;
                 case CardType.Scissors:
-                    image.Color = Color.Blue;
+                    _image.Color = Color.Blue;
 
                     break;
             }

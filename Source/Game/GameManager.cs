@@ -11,6 +11,7 @@ namespace Game
     public class GameManager : Script
     {
         public Prefab cardPrefab;
+        public Actor deckActor;
 
         private List<Card> _deck;
         private List<Card> _playerHand;
@@ -54,7 +55,7 @@ namespace Game
             // create three cards of each type (rock, paper, scissors) and shuffle them into the deck
             for (int i = 0; i < 3; i++)
             {
-                _deck.Add(PrefabManager.SpawnPrefab(cardPrefab).GetScript<Card>());
+                _deck.Add(PrefabManager.SpawnPrefab(cardPrefab, deckActor).GetScript<Card>());
             }
         }
     }
