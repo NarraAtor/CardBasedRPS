@@ -10,15 +10,18 @@ namespace Game
     /// </summary>
     public class TestButton : Script
     {
-        public Button button;
+        public UIControl UIEle;
+        private Button _button;
         /// <inheritdoc/>
         public override void OnStart()
         {
-            // button = Actor.GetGet<Button>();
-            Debug.Log(this.);
+            _button = UIEle.Get<Button>();
+            Debug.Log(_button);
+            _button.HoverBegin += OnHoverBegin;
+
             // Here you can add code that needs to be called when script is created, just before the first game update
         }
-        
+
         /// <inheritdoc/>
         public override void OnEnable()
         {
@@ -35,6 +38,16 @@ namespace Game
         public override void OnUpdate()
         {
             // Here you can add code that needs to be called every frame
+        }
+
+        private void OnButtonClicked(Button button)
+        {
+            Debug.Log($"Hovered over card: {button}");
+        }
+
+        private void OnHoverBegin()
+        {
+            Debug.Log($"Hovered over card: ");
         }
     }
 }
