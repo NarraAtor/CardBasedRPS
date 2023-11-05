@@ -19,9 +19,12 @@ namespace Game
     {
         public UIControl UIEle;
         public CardType CardType { get { return _cardType; } set { _cardType = value; } }
-        
+        public Texture rockTexture;
+        public Texture paperTexture;
+        public Texture scissorsTexture;
+        public Texture cardbackTexture;
+
         private CardType _cardType;
-        private Image _image;
         private Button _button;
 
         /// <inheritdoc/>
@@ -29,9 +32,8 @@ namespace Game
         {
             // Here you can add code that needs to be called when script is created, just before the first game update
 
-            _image = UIEle.Get<Image>();
-            _button = Actor.GetChild<UIControl>().Get<Button>();
-            // Debug.Log(_button);
+            // Is this the only way of doing this? There should be a way for me to pass in/refer to this image directly
+            _button = UIEle.Get<Button>();
             _button.ButtonClicked += OnButtonClicked;
         }
         
@@ -51,7 +53,7 @@ namespace Game
         public override void OnUpdate()
         {
             // Here you can add code that needs to be called every frame
-            SetCardColor();
+            //SetCardColor();
         }
 
         private void OnButtonClicked(Button button)
@@ -64,16 +66,16 @@ namespace Game
             switch (_cardType)
             {
                 case CardType.Rock:
-                    _image.Color = Color.Red;
+                    //_image.Color = Color.Red;
 
                     break;
                 case CardType.Paper:
-                    _image.Color = Color.Green;
+                    //_image.Color = Color.Green;
                     break;
                 case CardType.Scissors:
-                    _image.Color = Color.Blue;
+                    //_image.Color = Color.Blue;
 
-                    break;
+                  break;
             }
         }
 
