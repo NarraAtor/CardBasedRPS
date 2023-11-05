@@ -19,7 +19,8 @@ namespace Game
         private List<Card> _playerHand;
         private List<Card> _aiHand;
 
-        private readonly int NUM_OF_EACH_CARD_IN_DECK = 3;
+        private readonly int NUM_OF_EACH_CARD_IN_DECK = 4;
+        private readonly int HAND_SIZE = 3;
 
         /// <inheritdoc/>
         public override void OnStart()
@@ -29,7 +30,7 @@ namespace Game
             _playerHand = new List<Card>();
             _aiHand = new List<Card>();
 
-            GenerateDeck();
+            InitGame();
         }
         
         /// <inheritdoc/>
@@ -54,8 +55,31 @@ namespace Game
         {
             GenerateDeck();
 
-            // draw the player and AI hands
+            // draw the player hand from the deck
+            int playerHandX = 100;
+            int playerHandY = 600;
+            for (int i = 0; i < HAND_SIZE; i++)
+            {
+                Card card = _deck[i];
+                _deck.Remove(card);
+                _playerHand.Add(card);
+                card.Actor.SetParent(playerHandActor, false);
+                //card.Actor.Transform = new Transform(new Vector3(playerHandX, playerHandY, 0));
+                playerHandX += 64;
+            }
 
+            // draw the ai hand from the deck
+            int aiHandX = 100;
+            int aiHandY = 0;
+            for (int i = 0; i < HAND_SIZE; i++)
+            {
+                Card card = _deck[i];
+                _deck.Remove(card);
+                _aiHand.Add(card);
+                card.Actor.SetParent(aiHandActor, false);
+                //card.Actor.Transform = new Transform(new Vector3(aiHandX, aiHandY, 0));
+                playerHandX += 64;
+            }
         }
 
         private void GenerateDeck()
@@ -87,7 +111,8 @@ namespace Game
                 _deck.Add(newCard);
             }
 
-            // shuffle deck later
+            // shuffle the deck
+            Utilities.Shuffle(_deck);
         }
     }
 }
