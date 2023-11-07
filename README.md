@@ -1,5 +1,7 @@
 # CardBasedRPS
 
+https://github.com/NarraAtor/CardBasedRPS/assets/39078738/3789fdca-cf56-4293-8e63-c99412605769
+
 ## Inspiration
 
 I watched kakegurui. A unique card-based version of rock paper scissors was played in the first episode. I figured it would be straightforward enough to try and create this with a screen reader.
